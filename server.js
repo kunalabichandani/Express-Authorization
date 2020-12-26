@@ -34,7 +34,7 @@ mongoose.
 app.use(passport.initialize());
 require('./config/passport')(passport);
 
-app.use('/user', User);
+app.use('/api/user', User);
 
 // root route
 app.get('/', (req, res) => {
