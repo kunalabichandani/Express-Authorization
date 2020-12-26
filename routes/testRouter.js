@@ -1,15 +1,10 @@
 const express = require('express');
-
 const router = express.Router();
+const passport = require('passport');
 
-router.get('/test', (req, res) => {
+router.get('/test', passport.authenticate("jwt", { session: false }), (req, res) => {
   res.status(200);
-  res.send('API get is working properly!');
+  res.send('API is working properly!');
 });
-
-router.get('/test', (req, res) => {
-    res.status(200);
-    res.send('API is working properly!');
-  });
 
 module.exports = router;
